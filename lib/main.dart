@@ -76,18 +76,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               children: [
                                 // Logo Placeholder Shape
                                 Container(
-                                  width: 44,
-                                  height: 44,
+                                  width: 69,
+                                  height: 69,
                                   decoration: const BoxDecoration(
-                                    color: Color(
-                                      0xFFFFB259,
-                                    ), // Example fallback color matching asset vibes
                                     shape: BoxShape.circle,
                                   ),
-                                  child: const Icon(
-                                    Icons.back_hand_rounded,
-                                    color: Colors.white,
-                                    size: 24,
+                                  child: ClipOval(
+                                    child: Image.asset(
+                                      'images/afyahive_logo.png',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                                 const SizedBox(width: 12),
@@ -104,10 +102,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'thrive inside the hive',
+                                      'The ecosystem of smart health',
                                       style: TextStyle(
                                         color: Colors.white.withOpacity(0.7),
-                                        fontSize: 12,
+                                        fontSize: 15,
                                         letterSpacing: 0.5,
                                       ),
                                     ),
@@ -127,14 +125,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                   0xFFEADBCE,
                                 ), // Adaptive placeholder color
                                 child: Image.asset(
-                                  'assets/images/hero.png',
+                                  'images/login_illustration.png',
                                   fit: BoxFit.cover,
                                   errorBuilder: (context, error, stackTrace) {
                                     return const Center(
                                       child: Icon(
                                         Icons.image,
                                         size: 40,
-                                        color: Colors.grey,
+                                        color: Color.fromARGB(255, 135, 32, 32),
                                       ),
                                     );
                                   },
@@ -344,12 +342,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             // Google Button
                             _buildSocialButton(
-                              icon: Icons
-                                  .g_mobiledata_rounded, // Replace with accurate brand assets where needed
+                              icon: Icons.g_mobiledata_rounded,
                               text: 'Continue with Google',
-                              iconColor: Colors.red,
+                              iconColor: const Color.fromARGB(
+                                255,
+                                244,
+                                146,
+                                54,
+                              ),
                             ),
-                            const SizedBox(height: 12),
+                            const SizedBox(height: 26),
 
                             // Apple Button
                             _buildSocialButton(
